@@ -4,7 +4,7 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="build/make/core build/soong system/core"
+dirs="bionic build/make/core build/soong system/core"
 
 for dir in $dirs ; do
 	cd $rootdirectory
