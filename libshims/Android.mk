@@ -36,7 +36,7 @@ LOCAL_SRC_FILES := \
     gui/mtk_gui.cpp \
     gui/SensorManager.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder libgui liblog libui libutils
+LOCAL_SHARED_LIBRARIES := libbinder libgui liblog libsensor libui libutils
 LOCAL_MODULE := libshim_gui
 LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
 LOCAL_PROPRIETARY_MODULE := true
