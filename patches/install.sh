@@ -4,7 +4,7 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="bionic build/make/core build/soong system/core vendor/lineage"
+dirs="build/make/core build/soong system/core vendor/lineage"
 
 # red + nocolor
 RED='\033[0;31m'
