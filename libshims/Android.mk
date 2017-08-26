@@ -4,11 +4,16 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-    agps/crypto.c \
-    agps/icu53.c \
-    agps/ssl.c
+	agps/crypto.c \
+	agps/icu53.c \
+	agps/ssl.c
 
-LOCAL_SHARED_LIBRARIES := liblog libicuuc libssl libcrypto
+LOCAL_SHARED_LIBRARIES := \
+	liblog \
+	libicuuc \
+	libssl \
+	libcrypto
+
 LOCAL_MODULE := libshim_agps
 LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
 LOCAL_PROPRIETARY_MODULE := true
@@ -22,7 +27,10 @@ LOCAL_SRC_FILES := ui/mtk_ui.cpp
 
 #ui/mtk_gbc1.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder libui
+LOCAL_SHARED_LIBRARIES := \
+	libbinder \
+	libui
+
 LOCAL_MODULE := libshim_ui
 LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
 LOCAL_PROPRIETARY_MODULE := true
@@ -36,7 +44,14 @@ LOCAL_SRC_FILES := \
     gui/mtk_gui.cpp \
     gui/SensorManager.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder libgui liblog libsensor libui libutils
+LOCAL_SHARED_LIBRARIES := \
+	libbinder \
+	libgui \
+	liblog \
+	libsensor \
+	libui \
+	libutils
+
 LOCAL_MODULE := libshim_gui
 LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
 LOCAL_PROPRIETARY_MODULE := true
@@ -48,7 +63,10 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := audio/mtk_audio.cpp
 
-LOCAL_SHARED_LIBRARIES := libbinder libmedia
+LOCAL_SHARED_LIBRARIES := \
+	libbinder \
+	libmedia
+
 LOCAL_MODULE := libshim_snd
 LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
 LOCAL_PROPRIETARY_MODULE := true
