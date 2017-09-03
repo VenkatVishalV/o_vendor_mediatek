@@ -1,16 +1,17 @@
-From 45cb2d79241dd4b4990521cf9ed52341c732163a Mon Sep 17 00:00:00 2001
+From 761f370fd3ed00aa31de3cc745e8d4479151a06b Mon Sep 17 00:00:00 2001
 From: Mister Oyster <oysterized@gmail.com>
 Date: Sun, 3 Sep 2017 16:45:22 +0200
 Subject: [PATCH] build: soong: add BOARD_USES_MTK_HARDWARE (v2)
 
 * now done properly
+* C&Cpp flags
 
 Change-Id: I9affcbc31411c9f1b22ae9ce19e12144012d0cc7
 ---
  android/config.go   | 4 ++++
- android/variable.go | 7 +++++++
+ android/variable.go | 8 ++++++++
  cc/compiler.go      | 4 ++++
- 3 files changed, 15 insertions(+)
+ 3 files changed, 16 insertions(+)
 
 diff --git a/android/config.go b/android/config.go
 index 686eeb8..268d121 100644
@@ -28,10 +29,10 @@ index 686eeb8..268d121 100644
  	return Bool(c.config.ProductVariables.NativeCoverage)
  }
 diff --git a/android/variable.go b/android/variable.go
-index 13456f1..b48aecc 100644
+index 13456f1..40ecafd 100644
 --- a/android/variable.go
 +++ b/android/variable.go
-@@ -60,6 +60,12 @@ type variableProperties struct {
+@@ -60,6 +60,13 @@ type variableProperties struct {
  			Cflags []string
  		}
  
@@ -39,12 +40,13 @@ index 13456f1..b48aecc 100644
 +		// This controls Mediatek code specifics
 +		Mtk_hardware struct {
 +			Cflags []string
++			Cppflags []string
 +		}
 +
  		// treble is true when a build is a Treble compliant device.  This is automatically set when
  		// a build is shipped with Android O, but can be overriden.  This controls such things as
  		// the sepolicy split and enabling the Treble linker namespaces.
-@@ -133,6 +139,7 @@ type productVariables struct {
+@@ -133,6 +140,7 @@ type productVariables struct {
  	Eng                        *bool `json:",omitempty"`
  	EnableCFI                  *bool `json:",omitempty"`
  	Treble                     *bool `json:",omitempty"`
