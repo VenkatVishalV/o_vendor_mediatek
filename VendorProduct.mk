@@ -1,7 +1,7 @@
 # CM mediatek powerHAL
 PRODUCT_PACKAGES += \
     power.default \
-    power.mt6753 \
+    power.$(TARGET_BOARD_PLATFORM) \
     vendor.lineage.power@1.0-impl
     #android.hardware.power@1.0-impl // non-lineage imp
 
