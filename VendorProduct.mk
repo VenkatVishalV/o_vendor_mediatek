@@ -15,3 +15,8 @@ PRODUCT_PACKAGES += \
     libshim_snd \
     libshim_ui \
     libshim_xlog
+
+# Vibrator HAL
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service.mediatek
