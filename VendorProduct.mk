@@ -6,3 +6,12 @@ PRODUCT_PACKAGES += \
     #android.hardware.power@1.0-impl // non-lineage imp
 
 #TARGET_TAP_TO_WAKE_NODE=
+
+# Mtk symbols & shim
+PRODUCT_PACKAGES += \
+    libshim_agps \
+    libshim_asc \
+    libshim_gui \
+    libshim_snd \
+    libshim_ui \
+    libshim_xlog
