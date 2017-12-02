@@ -18,4 +18,7 @@ Include both `VendorConfig.mk` & `VendorProduct.mk` in your device tree like so 
 
 # How to apply the patches ?
 Patches located in the patches folder can be applied from the root of your android sources :  
-`. vendor/mediatek/install.sh` & `. vendor/mediatek/uninstall.sh` 
+`. vendor/mediatek/patches/install.sh` & `. vendor/mediatek/patches/uninstall.sh` 
+
+# Credits:
+Moyster
