@@ -20,12 +20,40 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
 
+## libshim_atomic
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := misc/atomic.cpp
+LOCAL_MODULE := libshim_atomic
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
+
+
+## libshim_bionic
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := misc/bionic.cpp
+LOCAL_MODULE := libshims_bionic
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_SHARED_LIBRARIES := libc
+include $(BUILD_SHARED_LIBRARY)
+
+
+## libshim_omx
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := misc/mtk-lp-omx.cpp
+LOCAL_MODULE := libshim_omx
+LOCAL_CFLAGS := -O3 -Wno-unused-variable -Wno-unused-parameter
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
+
+
 ## libshim_ui
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := ui/mtk_ui.cpp
-
-#ui/mtk_gbc1.cpp
 
 LOCAL_SHARED_LIBRARIES := \
 	libbinder \
@@ -41,8 +69,8 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-    gui/mtk_gui.cpp \
-    gui/SensorManager.cpp
+	gui/mtk_gui.cpp \
+	gui/SensorManager.cpp
 
 LOCAL_SHARED_LIBRARIES := \
 	libbinder \
@@ -76,7 +104,7 @@ include $(BUILD_SHARED_LIBRARY)
 ## libshim_xlog
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := xlog.c
+LOCAL_SRC_FILES := misc/xlog.c
 
 LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_MODULE := libshim_xlog
